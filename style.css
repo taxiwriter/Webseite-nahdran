@@ -352,12 +352,10 @@
     grid-column: span 3;
   }
   
-  .pattern-circle {
+  .pattern-fuellfeder {
     width: 301px;
-    height: 301px;
-    border-radius: 50%;
-    background: #222222;
-    opacity: 0.85;
+    height: auto;
+    display: block;
   }
   
   .pattern-diamonds {
@@ -372,18 +370,21 @@
     position: absolute;
     width: 145px;
     height: 127px;
-    background: var(--forest);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
   
   .pattern-diamonds::before {
     left: 0;
     bottom: 0;
+    background-image: url("bilder/zeichen-1.svg");
   }
   
   .pattern-diamonds::after {
     right: 0;
     top: 0;
+    background-image: url("bilder/zeichen-2.svg");
   }
   
   /* —— Veranstalter —— */
