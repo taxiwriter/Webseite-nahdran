@@ -485,6 +485,14 @@
     font-size: 0.8rem;
     color: rgba(33, 48, 33, 0.45);
   }
+
+  .sponsor-slot__img {
+    width: 251px;
+    height: 251px;
+    object-fit: contain;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
   
   .carousel-btn {
     position: absolute;
