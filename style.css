@@ -66,9 +66,15 @@
   }
   
   .heading-section {
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
-    padding-left: 48px;
+    padding-left: 0px;
+  }
+
+  .heading-section--center {
+    padding-left: 0;
+    text-align: center;
   }
   
   .text-body {
@@ -96,7 +102,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
+    min-height: 30px;
     padding: 0 24px;
     border: none;
     border-radius: var(--radius-pill);
@@ -239,48 +245,35 @@
   .section-categories__title-wrap {
     margin-bottom: 4rem;
   }
-  
+
   .categories-grid {
     display: grid;
-    grid-template-columns: repeat(3, 270px);
-    justify-content: center;
-    gap: 170px;
-    position: relative;
-    padding-top: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
   }
-  
-  .categories-grid::before,
-  .categories-grid::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: var(--forest);
+
+  .category-card {
+    padding: 0 2.5rem;
+    text-align: left;
   }
-  
-  .categories-grid::before {
-    left: calc(50% - 85px);
+
+  .category-card + .category-card {
+    border-left: 1px solid var(--forest);
   }
-  
-  .categories-grid::after {
-    left: calc(50% + 85px);
-  }
-  
+
   .category-card h3 {
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 16px;
   }
-  
+
   .category-card p {
     font-size: 0.9rem;
     line-height: 1.45;
   }
-  
+
   .category-badge {
-    position: absolute;
-    top: -3.5rem;
     width: 54px;
     height: 53px;
     border-radius: 50%;
@@ -291,11 +284,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2.5rem;
   }
-  
-  .category-badge--1 { left: calc(50% - 434px); }
-  .category-badge--2 { left: calc(50% - 90px); }
-  .category-badge--3 { left: calc(50% + 254px); }
   
   /* —— Split-Sektionen (Richtlinien / Anmeldung / Jury) —— */
   .section-split {
@@ -343,12 +333,14 @@
   
   /* Dekorative Grafiken */
   .pattern-grid {
-    width: 206px;
-    height: 206px;
+    position: relative;
+    top: -15px;
+    width: 170px;
+    height: 170px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    gap: 4px;
+    gap: 24px;
   }
   
   .pattern-grid span {
@@ -608,15 +600,17 @@
       max-width: 400px;
       margin: 0 auto;
     }
-  
-    .categories-grid::before,
-    .categories-grid::after {
-      display: none;
+
+    .category-card {
+      padding: 0;
     }
-  
+
+    .category-card + .category-card {
+      border-left: none;
+    }
+
     .category-badge {
-      position: static;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
   
     .sponsors-grid {
