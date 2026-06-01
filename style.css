@@ -8,7 +8,7 @@
     --max-width: 1440px;
     --header-h: 50px;
     --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
-    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-display: Georgia, "Cormorant Garamond", serif;
     --radius-pill: 100px;
     --section-pad-x: 93px;
   }
