@@ -53,7 +53,7 @@
   .heading-xl {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.1;
     text-align: center;
   }
@@ -213,17 +213,12 @@
     max-width: 604px;
   }
   
-  .section-jury__logo-placeholder {
+  .section-jury__logo {
     width: 100%;
+    height: auto;
+    display: block;
     aspect-ratio: 604 / 319;
-    background: rgba(238, 236, 224, 0.08);
-    border: 2px dashed rgba(240, 242, 204, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--lime);
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    object-fit: contain;
   }
   
   .section-jury__content {
