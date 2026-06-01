@@ -1,5 +1,6 @@
 /* Figma Landingpage 73:319 – Design Tokens */
 :root {
+    --white: #ffffff;
     --cream: #eeece0;
     --forest: #213021;
     --lime: #f0f2cc;
@@ -27,7 +28,7 @@
   
   body {
     font-family: var(--font-sans);
-    background: var(--cream);
+    background: var(--white);
     color: var(--forest);
     line-height: 1.5;
   }
@@ -449,6 +450,12 @@
     justify-content: center;
     font-size: 0.7rem;
     color: rgba(33, 48, 33, 0.5);
+  }
+
+  .organizer-card__logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
   
   /* —— Sponsoren —— */
