@@ -331,6 +331,71 @@
   .section-split--sage .section-split__text p {
     color: var(--forest);
   }
+
+  /* Jury-Sektion mit Raster */
+  .section-split--jury {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .section-split__top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+  }
+
+  .jury-grid {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .jury-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .jury-card__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .jury-card__img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 48, 33, 0.08);
+    border: 1px dashed rgba(33, 48, 33, 0.3);
+    color: rgba(33, 48, 33, 0.5);
+    font-size: 0.85rem;
+  }
+
+  .jury-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .jury-card__name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .jury-card__text p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--forest);
+  }
   
   /* Dekorative Grafiken */
   .pattern-grid {
@@ -418,7 +483,17 @@
     gap: 24px;
     border-right: 1px solid var(--forest);
   }
-  
+
+/*
+  .organizer-card-logo {
+    position: static;
+    padding: 2rem 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+*/
+
   .organizer-card:last-child {
     border-right: none;
   }
@@ -641,6 +716,12 @@
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
     }
+
+    .jury-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 600px;
+      margin: 0 auto;
+    }
   
     .organizers-grid {
       grid-template-columns: 1fr;
@@ -675,6 +756,16 @@
     .section-split {
       flex-direction: column;
       text-align: center;
+    }
+
+    .section-split__top {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .jury-grid {
+      grid-template-columns: 1fr;
+      max-width: 320px;
     }
   
     .heading-section {
