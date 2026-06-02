@@ -134,6 +134,13 @@
     display: flex;
     width: fit-content;
   }
+
+  .btn--right {
+    margin-top: 20px;
+    display: flex;
+    width: fit-content;
+
+  }
   
   /* —— Header —— */
   .header {
@@ -238,7 +245,7 @@
   /* —— Sektion: Kategorien (lime) —— */
   .section-categories {
     background: var(--lime);
-    min-height: 809px;
+    min-height: 609px;
     padding: 5rem var(--section-pad-x) 4rem;
     position: relative;
   }
@@ -593,7 +600,7 @@
   /* —— Footer —— */
   .footer {
     background: var(--forest);
-    min-height: 370px;
+    min-height: 230px;
     padding: 50px 135px 2rem;
     display: flex;
     flex-direction: column;
@@ -642,7 +649,7 @@
     font-size: 0.75rem;
     color: var(--lime);
     max-width: 210px;
-    line-height: 1.4;
+    line-height: 2.4;
   }
   
   .footer__social {
