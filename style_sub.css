@@ -71,6 +71,7 @@
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
     padding-left: 0px;
+    hyphens: auto;
   }
 
   .heading-section--center {
@@ -566,7 +567,7 @@
   
   .sponsor-slot {
     width: 250px;
-    height: 1800px;
+    height: 250px;
     background: rgba(33, 48, 33, 0.06);
     border: 1px dashed rgba(33, 48, 33, 0.15);
     display: flex;
@@ -578,7 +579,7 @@
 
   .sponsor-slot__img {
     width: 250px;
-    height: 180px;
+    height: 250px;
     object-fit: contain;    
     margin-left: 5px;
     margin-right: 5px;
@@ -854,7 +855,7 @@
   
   /* —— Impressum —— */
   .section-impressum {
-    min-height: 778px;
+    min-height: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
