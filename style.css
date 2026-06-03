@@ -550,15 +550,15 @@
   
   .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(5, 160px);
+    grid-template-columns: repeat(5, 180px);
     justify-content: center;
-    gap: 80px;
+    gap: 50px;
     margin-top: 3rem;
   }
   
   .sponsor-slot {
-    width: 251px;
-    height: 251px;
+    width: 250px;
+    height: 250px;
     background: rgba(33, 48, 33, 0.06);
     border: 1px dashed rgba(33, 48, 33, 0.15);
     display: flex;
@@ -569,11 +569,11 @@
   }
 
   .sponsor-slot__img {
-    width: 251px;
-    height: 251px;
+    width: 250px;
+    height: 250px;
     object-fit: contain;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   .carousel-btn {
