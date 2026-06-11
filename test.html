@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landingpage – Figma 73:319</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* —— Design Tokens aus Figma 73:319 —— */
+    :root {
+      --cream: #eeece0;   /* VariableID 20:66 */
+      --forest: #213021;  /* VariableID 20:69 */
+      --lime: #f0f2cc;    /* VariableID 20:67 */
+      --sage: #adbe8a;    /* VariableID 20:68 */
+      --white: #ffffff;
+      --black: #000000;
+      --frame-w: 1440px;
+      --radius-pill: 100px;
+      --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--forest);
+      line-height: 1.5;
+      background: #d9d9d9;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* —— Landingpage Frame (vertical auto-layout) —— */
+    .landingpage {
+      width: var(--frame-w);
+      max-width: 100%;
+      margin: 0 auto;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* —— Header (1440×50, horizontal, itemSpacing 193) —— */
+    .header {
+      height: 50px;
+      background: var(--forest);
+      border-bottom: 1px solid var(--lime);
+      display: flex;
+      align-items: center;
+      gap: 193px;
+      padding: 0 99px;
+    }
+
+    .header__logo {
+      width: 117px;
+      height: 50px;
+      object-fit: contain;
+      object-position: left center;
+      flex-shrink: 0;
+    }
+
+    .header__menu {
+      display: flex;
+      align-items: center;
+      gap: 51px;
+    }
+
+    .header__menu a {
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .header__menu a:hover { color: var(--lime); }
+
+    /* —— Hero Page (1440×778) —— */
+    .hero {
+      min-height: 778px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero__frame {
+      width: 886px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero__textblock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-align: center;
+      color: var(--forest);
+    }
+
+    .hero__lead {
+      max-width: 604px;
+      text-align: center;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--forest);
+    }
+
+    /* —— Buttons (cornerRadius 100) —— */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 28px;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); opacity: .92; }
+    .btn--forest { background: var(--forest); color: var(--cream); }
+    .btn--lime   { background: var(--lime);   color: var(--forest); }
+
+    /* —— Sektion „Die Jury“ (1440×766, forest) —— */
+    .jury-intro {
+      min-height: 766px;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 116px;
+      padding: 4rem 93px;
+      flex-wrap: wrap;
+    }
+
+    .jury-intro__image {
+      flex: 0 1 604px;
+      max-width: 604px;
+    }
+
+    .jury-intro__image img {
+      width: 100%;
+      aspect-ratio: 604 / 319;
+      object-fit: contain;
+    }
+
+    .jury-intro__content {
+      flex: 0 1 485px;
+      display: flex;
+      flex-direction: column;
+      gap: 33px;
+      color: var(--lime);
+    }
+
+    .jury-intro__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .jury-intro__text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* —— Sektion „Die Kategorien“ (1440×809, lime) —— */
+    .categories {
+      min-height: 809px;
+      background: var(--lime);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 70px;
+      padding: 5rem 93px;
+    }
+
+    .categories__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      text-align: center;
+      color: var(--forest);
+    }
+
+    .categories__grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category {
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .category + .category { border-left: 1px solid var(--forest); }
+
+    .category h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .category p {
+      font-size: .9rem;
+      line-height: 1.45;
+      color: var(--forest);
+    }
+
+    .categories__badges {
+      max-width: 1150px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+
+    .badge {
+      width: 54px;
+      height: 53px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--cream);
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* —— Split-Sektionen (1440×670) —— */
+    .split {
+      min-height: 670px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      padding: 4rem 93px;
+      flex-wrap: wrap;
+    }
+
+    .split--sage { background: var(--sage); }
+    .split--lime { background: var(--lime); }
+
+    .split__visual { flex: 0 0 auto; }
+
+    .split__content {
+      flex: 0 1 483px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .split__textblock {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+    }
+
+    .split__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .split__text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--forest);
+    }
+
+    /* Dekorative Grafiken */
+    .pattern-grid {
+      width: 206px;
+      height: 206px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 29px;
+    }
+    .pattern-grid span { background: var(--forest); border-radius: 1px; }
+    .pattern-grid span.wide { grid-column: span 3; }
+
+    .pattern-single {
+      width: 301px;
+      height: 301px;
+      border-radius: 50%;
+      background: var(--forest);
+    }
+
+    .pattern-diamonds {
+      width: 308px;
+      height: 269px;
+      position: relative;
+    }
+    .pattern-diamonds span {
+      position: absolute;
+      width: 145px;
+      height: 127px;
+      background: var(--forest);
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    .pattern-diamonds span:first-child { left: 0; bottom: 0; }
+    .pattern-diamonds span:last-child { right: 0; top: 0; }
+
+    /* —— Veranstalter (1440×683, cream) —— */
+    .organizers {
+      min-height: 683px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 150px 93px 4rem;
+    }
+
+    .organizers__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--forest);
+      padding-left: 48px;
+    }
+
+    .organizers__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .organizer {
+      padding: 32px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .organizer + .organizer { border-left: 1px solid var(--forest); }
+
+    .organizer h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+
+    .organizer p {
+      font-size: .9rem;
+      line-height: 1.45;
+      color: var(--forest);
+    }
+
+    .organizer__link {
+      font-size: .85rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-word;
+    }
+
+    .organizer__logo {
+      width: 120px;
+      height: 80px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    /* —— Sponsoren (1440×596, cream) —— */
+    .sponsors {
+      min-height: 596px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 100px 93px 4rem;
+      align-items: center;
+    }
+
+    .sponsors__title {
+      width: 100%;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--forest);
+      padding-left: 48px;
+    }
+
+    .sponsors__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 251px);
+      gap: 80px;
+      justify-content: center;
+    }
+
+    .sponsors__grid img {
+      width: 251px;
+      height: 251px;
+      object-fit: contain;
+      background: var(--white);
+    }
+
+    .sponsors__arrow {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--forest);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sponsors__arrow svg { width: 23px; height: 13px; }
+
+    /* —— Footer (1440×370, forest) —— */
+    .footer {
+      min-height: 370px;
+      background: var(--forest);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 50px 135px 2rem;
+      position: relative;
+    }
+
+    .footer__explore {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      color: var(--lime);
+    }
+
+    .footer__brand {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: .25rem;
+    }
+
+    .footer__explore a {
+      color: var(--lime);
+      font-size: 1rem;
+    }
+
+    .footer__explore a:hover { text-decoration: underline; }
+
+    .footer__bottom {
+      width: 100%;
+      max-width: 1170px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copyright {
+      font-size: .8rem;
+      color: var(--lime);
+      max-width: 207px;
+      line-height: 2;
+    }
+
+    .footer__social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--lime);
+    }
+
+    .footer__social svg { width: 25px; height: 25px; }
+
+    .footer__legal {
+      font-size: 1rem;
+      color: var(--lime);
+    }
+
+    .footer__legal a:hover { text-decoration: underline; }
+
+    .footer__mark {
+      position: absolute;
+      left: 52px;
+      bottom: 2.5rem;
+      width: 51px;
+      height: 44px;
+      opacity: .9;
+    }
+
+    .footer__mark img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* —— Responsive —— */
+    @media (max-width: 1200px) {
+      .categories__grid,
+      .categories__badges,
+      .organizers__grid { grid-template-columns: 1fr; }
+      .category + .category,
+      .organizer + .organizer { border-left: none; }
+      .categories__badges { display: none; }
+      .sponsors__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .header { height: auto; flex-wrap: wrap; gap: 1.5rem; padding: .5rem 1.5rem; }
+      .header__menu { gap: 1.25rem; flex-wrap: wrap; justify-content: center; width: 100%; }
+      .sponsors__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .jury-intro, .split, .categories, .organizers, .sponsors { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .footer { padding: 2rem 1.5rem; }
+      .footer__bottom { flex-direction: column; align-items: center; text-align: center; }
+      .footer__mark { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="landingpage">
+
+    <!-- Header 73:320 -->
+    <header class="header">
+      <a href="#" aria-label="Nah dran Startseite">
+        <img class="header__logo" src="bilder/nahdran-logo-hell.svg" alt="Nah dran Logo">
+      </a>
+      <nav class="header__menu" aria-label="Hauptnavigation">
+        <a href="#kategorien">Kategorien</a>
+        <a href="#richtlinien">Richtlinien</a>
+        <a href="#anmeldung">Anmeldung</a>
+        <a href="#jury">Jury</a>
+        <a href="#veranstalter">Veranstalter</a>
+        <a href="#sponsoren">Sponsoren &amp; Partner</a>
+      </nav>
+    </header>
+
+    <!-- Hero Page 73:338 -->
+    <section class="hero" id="start">
+      <div class="hero__frame">
+        <div class="hero__textblock">
+          <h1 class="hero__title">Sei nah dran!</h1>
+          <p class="hero__lead">
+            Der Steirische Presseclub schreibt gemeinsam mit dem Institut für Journalismus und Digitale Medien der FH JOANNEUM und der Österreichischen Medienakademie 2026 erstmals den steirischen Preis für Lokaljournalismus „Nah dran“ aus.
+          </p>
+        </div>
+        <a class="btn btn--forest" href="#anmeldung">Jetzt anmelden</a>
+      </div>
+    </section>
+
+    <!-- Die Jury 73:345 -->
+    <section class="jury-intro" id="jury">
+      <div class="jury-intro__image">
+        <img src="bilder/nahdran-logo-gelb.svg" alt="NahDran Logo Frühlingsknospen">
+      </div>
+      <div class="jury-intro__content">
+        <h2 class="jury-intro__title">Die Jury</h2>
+        <p class="jury-intro__text">
+          Der Steirische Presseclub schreibt gemeinsam mit der Fachhochschule JOANNEUM und der Österreichischen Medienakademie 2026 erstmals den steirischen Preis für Lokaljournalismus „Nah dran“ aus. Ziel ist es, herausragende journalistische Arbeiten mit Steiermarkbezug zu würdigen. Besonderes Augenmerk wird dabei auf hohe Qualität, Relevanz und Verantwortung gelegt. Der Preis soll sichtbar machen, wie wichtig professioneller Lokaljournalismus für demokratische Meinungsbildung, gesellschaftlichen Zusammenhalt und für die regionale Identität der Steiermark ist. Gleichzeitig versteht sich der Preis als Brücke zwischen Ausbildung, Praxis und Nachwuchsförderung.
+        </p>
+        <a class="btn btn--lime" href="#">Weitere Infos</a>
+      </div>
+    </section>
+
+    <!-- Die Kategorien 73:362 -->
+    <section class="categories" id="kategorien">
+      <h2 class="categories__title">Die Kategorien</h2>
+      <div class="categories__grid">
+        <article class="category">
+          <h3>FH JOANNEUM</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+        <article class="category">
+          <h3>FH JOANNEUM</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+        <article class="category">
+          <h3>FH JOANNEUM</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+      </div>
+      <div class="categories__badges">
+        <span class="badge">1</span>
+        <span class="badge">2</span>
+        <span class="badge">3</span>
+      </div>
+    </section>
+
+    <!-- Richtlinien 73:378 -->
+    <section class="split split--sage" id="richtlinien">
+      <div class="split__visual" aria-hidden="true">
+        <div class="pattern-grid">
+          <span></span><span class="wide"></span>
+          <span></span><span class="wide"></span>
+          <span></span><span class="wide"></span>
+          <span></span><span class="wide"></span>
+        </div>
+      </div>
+      <div class="split__content">
+        <div class="split__textblock">
+          <h2 class="split__title">Richtlinien</h2>
+          <p class="split__text">
+            Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitu.
+          </p>
+        </div>
+        <a class="btn btn--forest" href="#">Zum Regelwerk</a>
+      </div>
+    </section>
+
+    <!-- Anmeldung 73:389 -->
+    <section class="split split--lime" id="anmeldung">
+      <div class="split__content">
+        <div class="split__textblock">
+          <h2 class="split__title">Richtlinien</h2>
+          <p class="split__text">
+            Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitu.
+          </p>
+        </div>
+        <a class="btn btn--forest" href="#">Zum Regelwerk</a>
+      </div>
+      <div class="split__visual" aria-hidden="true">
+        <div class="pattern-single"></div>
+      </div>
+    </section>
+
+    <!-- Richtlinien (2) 73:393 -->
+    <section class="split split--sage">
+      <div class="split__visual" aria-hidden="true">
+        <div class="pattern-diamonds"><span></span><span></span></div>
+      </div>
+      <div class="split__content">
+        <div class="split__textblock">
+          <h2 class="split__title">Richtlinien</h2>
+          <p class="split__text">
+            Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitu.
+          </p>
+        </div>
+        <a class="btn btn--forest" href="#">Zum Regelwerk</a>
+      </div>
+    </section>
+
+    <!-- Veranstalter 73:398 -->
+    <section class="organizers" id="veranstalter">
+      <h2 class="organizers__title">Veranstalter</h2>
+      <div class="organizers__grid">
+        <article class="organizer">
+          <div>
+            <h3>FH JOANNEUM</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <a class="organizer__link" href="https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/" target="_blank" rel="noopener noreferrer">https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/</a>
+          <img class="organizer__logo" src="bilder/logo_FHJ.svg" alt="FH JOANNEUM Logo">
+        </article>
+        <article class="organizer">
+          <div>
+            <h3>FH JOANNEUM</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <a class="organizer__link" href="https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/" target="_blank" rel="noopener noreferrer">https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/</a>
+          <img class="organizer__logo" src="bilder/steirischer-presseclub-logo.png" alt="Steirischer Presseclub Logo">
+        </article>
+        <article class="organizer">
+          <div>
+            <h3>FH JOANNEUM</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. Morbi a libero at nisl dignissim aliquet a ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <a class="organizer__link" href="https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/" target="_blank" rel="noopener noreferrer">https://www.fh-joanneum.at/institut/journalismus-und-digitale-medien/</a>
+          <img class="organizer__logo" src="bilder/oesterreichische-medienakademie-logo.svg" alt="Österreichische Medienakademie Logo">
+        </article>
+      </div>
+    </section>
+
+    <!-- Sponsoren 73:407 -->
+    <section class="sponsors" id="sponsoren">
+      <h2 class="sponsors__title">Sponsoren &amp; Partner</h2>
+      <div class="sponsors__grid">
+        <img src="bilder/Steirmark_Logo.png" alt="Sponsor 1">
+        <img src="bilder/grawe_png.png" alt="Sponsor 2">
+        <img src="bilder/WKO_Stmk_4c_png.png" alt="Sponsor 3">
+        <img src="bilder/AK-logo_png.png" alt="Sponsor 4">
+      </div>
+      <button type="button" class="sponsors__arrow" aria-label="Nächste Sponsoren">
+        <svg viewBox="0 0 23 13" fill="none" aria-hidden="true">
+          <path d="M2 2 L11.5 11 L21 2" stroke="#eeece0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- Footer 73:417 -->
+    <footer class="footer">
+      <nav class="footer__explore" aria-label="Footer-Navigation">
+        <span class="footer__brand">Nah Dran</span>
+        <a href="#start">Home</a>
+        <a href="#jury">Jury</a>
+        <a href="#">Pressebereich</a>
+        <a href="#anmeldung">Anmelden</a>
+        <a href="#">Kontakt</a>
+      </nav>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">©Steirischer Journalismuspreis Design by Sophia Hartleb</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4 4h4v16H4V4zm6 0h4v2.2c.8-1.4 2.4-2.4 4.6-2.4 4.2 0 5.4 2.8 5.4 6.4V20h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-4V4z"/>
+            </svg>
+          </a>
+        </div>
+        <p class="footer__legal">
+          <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a>
+        </p>
+      </div>
+
+      <div class="footer__mark" aria-hidden="true">
+        <img src="bilder/zeichen-1-gelb.svg" alt="">
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
